@@ -21,22 +21,9 @@
 
     <header>
       <nav>
-        <!-- <div id="navbar" class="navbar">
-                <div class="nav-left">
-                    <a href="index.html">Home</a>
-                </div>
-                <div class="nav-center">
-                    <a href="#"><button>Player Stats</button></a>
-                    <a href="#"><button>Play</button></a>
-                    <a href="#"><button>Player Chart</button></a>
-                </div>
-                <div class="nav-right">
-                    <a href="#"><button>Register</button></a>
-                </div>
-            </div> -->
         <div id="navbar" class="navbar">
           <a href="index.html">Home</a>
-          <button id="startButton">Start</button>
+          <button id="playButton" onclick="playFunction()">Play</button>
           <a href="#">Player Stats</a>
         </div>
       </nav>
@@ -86,6 +73,8 @@
 
         <!-- Task 3 -->
         <button type="submit" onclick="registerAndDisableFields()">Register</button>
+        <button id="startButton" onclick="startFunction()" disabled>Start</button>
+        <button id="endButton" onclick="endFunction()" disabled>End</button>
         </form>
       </div>
     </main>
