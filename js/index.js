@@ -1,4 +1,5 @@
-//Function used to calculate age in form(Task 1)
+//Task 1
+//Function used to calculate age in form
 function calculateAge() {
   //Getting the Date based on input by user
   var dobInput = document.getElementById("dob");
@@ -26,10 +27,72 @@ function calculateAge() {
   var ageIsValid = age >= 8 && age <= 12;
 
   //Displaying error and take action age is not valid
-  var errorMessage = document.getElementById("error-message");
-  if(!ageIsValid) {
-    errorMessage.innerHTML = "Age must be between 8 and 12 inclusive.";
+  if (!ageIsValid) {
+    ageInput.value = "Invalid Date of Birth";
+    ageInput.style.color = "red";
   } else {
-    errorMessage.innerHTML = "";
+    ageInput.style.color = null;
   }
+}
+
+//Task 2
+var PlayerRegistrationData = [];
+
+function Register() {
+  var fname = document.getElementById("fname").value;
+  var lname = document.getElementById("lname").value;
+  var dob = document.getElementById("dob").value;
+  var age = document.getElementById("age").value;
+  var gender = document.getElementById("gender").value;
+
+  //Validating all entried
+  if (
+    fname === "" ||
+    lname === "" ||
+    dob === "" ||
+    age === "" ||
+    gender === ""
+  ) {
+    alert("Complete all fields.");
+    return false;
+  }
+
+  var playerData = {
+    FirstName: fname,
+    LastName: lname,
+    DateOfBirth: dob,
+    Age: age,
+    Gender: gender,
+  };
+
+  PlayerRegistrationData.push(playerData);
+
+  localStorage.setItem(
+    "PlayerRegistrationData",
+    JSON.stringify(PlayerRegistrationData)
+  );
+
+  alert("Registration successful!");
+
+  document.getElementById("fname").value = "";
+  document.getElementById("lname").value = "";
+  document.getElementById("dob").value = "";
+  document.getElementById("age").value = "";
+  document.getElementById("gender").value = "";
+
+  return false;
+}
+
+//Task 3
+function registerAndDisableFields() {
+  var registrationResult = Register();
+ 
+  document.getElementById("fname").disabled = true;
+  document.getElementById("lname").disabled = true;
+  document.getElementById("dob").disabled = true;
+  document.getElementById("age").disabled = true;
+  document.getElementById("gender").disabled = true;
+  document.querySelector("#registrationForm button").disabled = true;
+
+  document.getElementById("startButton").disabled=false;
 }
