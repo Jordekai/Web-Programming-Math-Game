@@ -1,3 +1,9 @@
+function playFunction() {
+  var play = document.getElementById("playButton");
+  
+  alert("Register and click start!");
+}
+
 //Task 1
 //Function used to calculate age in form
 function calculateAge() {
@@ -86,7 +92,7 @@ function Register() {
 //Task 3
 function registerAndDisableFields() {
   var registrationResult = Register();
- 
+
   document.getElementById("fname").disabled = true;
   document.getElementById("lname").disabled = true;
   document.getElementById("dob").disabled = true;
@@ -94,5 +100,16 @@ function registerAndDisableFields() {
   document.getElementById("gender").disabled = true;
   document.querySelector("#registrationForm button").disabled = true;
 
-  document.getElementById("startButton").disabled=false;
+  document.getElementById("startButton").disabled = false;
+  document.getElementById("endButton").disabled = false;
+
+  return registrationResult;
+}
+
+function startFunction() {
+  alert("Start button clicked! :)");
+}
+
+function endFunction() {
+  alert("End button clicked! :)");
 }
