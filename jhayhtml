@@ -1,0 +1,106 @@
+<!-- Task 1: Create new HTML file -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Author" content="Jordan James" />
+    <meta
+      name="description"
+      content="Math Game designed for children between ages 8 to 12"
+    />
+    <meta
+      name="keywords"
+      content="Math, Mathematics, Game, Kids, Children, Multiplication"
+    />
+    <title>Math Game</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+
+    <header>
+      <nav>
+        <div id="navbar" class="navbar">
+          <a href="index.html">Home</a>
+          <button id="playButton" onclick="playFunction()">Play</button>
+          <a href="#">Player Stats</a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- End Navigation Bar -->
+
+    <!-- Registration Form -->
+
+    <main>
+      <div class="form-container">
+        <form id="registrationForm" action="">
+          <div class="form-item">
+            <label for="fname">First Name:</label>
+            <input type="text" name="fname" id="fname" required />
+          </div>
+
+          <div class="form-item">
+            <label for="lname">Last Name:</label>
+            <input type="text" name="lname" id="lname" required />
+          </div>
+
+          <div class="form-item">
+            <label for="dob">Date of Birth:</label>
+            <input
+              type="date"
+              name="dob"
+              id="dob"
+              onchange="calculateAge()"
+              required
+            />
+          </div>
+
+          <div class="form-item">
+            <label for="age">Age:</label>
+            <input type="text" name="age" id="age" disabled />
+          </div>
+
+          <div class="form-item">
+            <label for="gender">Gender:</label>
+            <select name="gender" id="gender" required>
+              <option value="" disabled selected>Select Gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+        </div>
+
+        <!-- Task 3 -->
+        <button type="submit" onclick="registerAndDisableFields()">Register</button>
+        <button id="startButton" onclick="startFunction()" disabled>Start</button>
+        <button id="endButton" onclick="endFunction()" disabled>End</button>
+        </form>
+      </div>
+    </main>
+
+    <!-- End Registration Form -->
+
+    <!--Task 4-->
+    <main>
+      <div class="form-container">
+      
+      <form id ="playArea">
+        <div class ="form-item"> 
+       	  <input type = text id="randnum1" size="2" disabled><label> x </label>
+	    	  <input type = text id="randnum2" size="2" disabled> <label> = </label>
+		      <input type = number id="ans" size="3"disabled >
+        </div>
+        <div class ="form-item"> 
+		      <input type = text id="result" size="10" disabled>
+        </div>
+        <button id="accept" onclick="" disabled>Accept</button>
+        <button id="next" onclick = "PlayGame()" disabled>Next</button>
+        <button id="check" onclick = "checkAns()" disabled>Check Answer</button>
+      </form>
+      
+    </main>
+  </body>
+
+  <script src="./js/index.js"></script>
+</html>
